@@ -15,6 +15,7 @@ export const GlobalStyles = createGlobalStyle`
 
   body {
     color: rgb(${({ theme }) => theme.font});
+    width: 100%;
     background: rgb(${({ theme }) => theme.background});
   }
 
@@ -32,7 +33,6 @@ export const GlobalStyles = createGlobalStyle`
     width: 5px;
     background: none;
     background: rgba(${({ theme }) => theme.secondary}, .3);
-    
   }
 
   ::-webkit-scrollbar-thumb {

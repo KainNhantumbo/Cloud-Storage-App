@@ -7,8 +7,8 @@ export const AsideContainer = styled.aside`
 	padding: 15px;
 	background: rgb(${({ theme }) => theme.backgroundAlt});
 	box-shadow: 0 0 3px rgb(${({ theme }) => theme.shadows});
-  position: fixed;
-  z-index: 5000;
+	position: fixed;
+	z-index: 5000;
 
 	.items-container {
 		height: 85%;
@@ -25,6 +25,19 @@ export const AsideContainer = styled.aside`
 		margin-bottom: 40px;
 		color: rgb(${({ theme }) => theme.primary});
 		user-select: none;
+		position: relative;
+
+		span {
+			padding-left: 28px;
+		}
+
+		svg {
+			position: absolute;
+			width: 22px;
+			height: 22px;
+			top: -3px;
+			left: 0px;
+		}
 	}
 
 	.upper-section {

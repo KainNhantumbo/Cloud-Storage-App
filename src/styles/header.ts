@@ -13,10 +13,21 @@ export const HeaderContainer = styled.header`
 	display: flex;
 	justify-content: space-between;
 	flex-direction: column;
-	gap: 20px;
+	gap: 15px;
 
 	.upper-container {
+		display: flex;
+		justify-content: space-between;
+		flex-direction: row;
+		position: relative;
+		width: 100%;
+
 		.right-section {
+			display: flex;
+			justify-content: center;
+			flex-direction: row;
+			margin: 0 auto;
+
 			form {
 				width: fit-content;
 				display: flex;
@@ -46,6 +57,7 @@ export const HeaderContainer = styled.header`
 					display: grid;
 					place-content: center;
 					padding: 4px;
+					cursor: pointer;
 					:hover {
 						background: rgba(${({ theme }) => theme.shadows}, 0.8);
 					}
@@ -56,6 +68,37 @@ export const HeaderContainer = styled.header`
 					height: 20px;
 					color: rgba(${({ theme }) => theme.font}, 0.8);
 				}
+			}
+		}
+
+		.left-section {
+			display: flex;
+			flex-flow: row nowrap;
+			gap: 15px;
+			align-items: center;
+			justify-content: flex-end;
+
+			button {
+				border: none;
+				background: none;
+				border-radius: 50px;
+				display: grid;
+				place-content: center;
+				padding: 5px;
+				cursor: pointer;
+
+				:hover {
+					background: rgba(${({ theme }) => theme.inner}, 0.8);
+					svg {
+						color: rgb(${({ theme }) => theme.secondary});
+					}
+				}
+			}
+
+			svg {
+				width: 25px;
+				height: 25px;
+				color: rgb(${({ theme }) => theme.primary});
 			}
 		}
 	}

@@ -1,12 +1,15 @@
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
 import { AsideContainer as Container } from '../styles/aside';
-import { BiTrash, FaClock, FaCloud, FaTrashAlt } from 'react-icons/all';
+import { FaClock, FaCloud, FaTrashAlt } from 'react-icons/all';
 
 export const Aside: FC = () => {
 	return (
 		<Container>
-			<h1>My Drive</h1>
+			<h1>
+				<FaCloud />
+				<span>Nava Drive</span>
+			</h1>
 			<div className='items-container'>
 				<section className='upper-section'>
 					<h3>

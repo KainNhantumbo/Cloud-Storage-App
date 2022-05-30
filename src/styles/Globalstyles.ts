@@ -11,6 +11,9 @@ export const GlobalStyles = createGlobalStyle`
 
   span, label {
     user-select: none;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
 
   body {

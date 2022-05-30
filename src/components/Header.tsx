@@ -1,6 +1,7 @@
 import { FC } from 'react';
-import { BiSearch, BiX, BsX, FaSearch, FaXbox, FiX } from 'react-icons/all';
+import { BiSearch, FaCog, FaTimes, FaUserCircle, FiX } from 'react-icons/all';
 import { HeaderContainer as Container } from '../styles/header';
+import { Toolbox } from './Toolbox';
 
 export const Header: FC = () => {
 	return (
@@ -8,19 +9,27 @@ export const Header: FC = () => {
 			<article className='upper-container'>
 				<section className='right-section'>
 					<form>
-						<BiSearch />
-						<input type='text' placeholder='Search on drive' />
 						<button type='submit'>
+							<BiSearch />
+						</button>
+						<input type='text' placeholder='Search on drive' />
+						<button type='reset'>
 							<FiX />
 						</button>
 					</form>
 				</section>
 				<section className='left-section'>
-					<div title='Preferences'></div>
-					<div title='User account'></div>
+					<button title='Preferences'>
+						<FaCog title='Preferences' />
+					</button>
+					<button title='User account'>
+						<FaUserCircle title='User account' />
+					</button>
 				</section>
 			</article>
-			<article className='bottom-container'></article>
+			<article className='bottom-container'>
+        <Toolbox/>
+      </article>
 		</Container>
 	);
 };

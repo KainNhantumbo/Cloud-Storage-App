@@ -1,11 +1,52 @@
-import { FC } from 'react';
-import { BiSearch, FaCog, FaTimes, FaUserCircle, FiX } from 'react-icons/all';
+import * as React from 'react';
+import { useState } from 'react';
+import {
+	BiSearch,
+	FaCog,
+	FaUserCircle,
+	FiX,
+	IoColorPalette,
+	IoLogOut,
+} from 'react-icons/all';
 import { HeaderContainer as Container } from '../styles/header';
-import { Toolbox } from './Toolbox';
 
-export const Header: FC = () => {
+interface Props {
+	toolbar?: JSX.Element;
+}
+
+export const Header: React.FC<Props> = ({ toolbar }): JSX.Element => {
+	const [userPanelStatus, setUserPanelStatus] = useState(true);
+
 	return (
 		<Container>
+			{userPanelStatus ? (
+				<div className='user-panel'>
+					<section className='panel-container'>
+						<div className='panel-info'>
+							<FaUserCircle title='User account' />
+							<div className='panel-details'>
+								<span>Maya Dorreto</span>
+								<span>mayladorreto@mailer.co.xs</span>
+							</div>
+						</div>
+						<div className='panel-actions'>
+							<div>
+								<IoColorPalette />
+								<span>Switch theme</span>
+							</div>
+							<div>
+								<FaCog />
+								<span>Settings</span>
+							</div>
+							<div>
+								<IoLogOut />
+								<span>Log out</span>
+							</div>
+						</div>
+					</section>
+				</div>
+			) : null}
+
 			<article className='upper-container'>
 				<section className='right-section'>
 					<form>
@@ -27,9 +68,7 @@ export const Header: FC = () => {
 					</button>
 				</section>
 			</article>
-			<article className='bottom-container'>
-        <Toolbox/>
-      </article>
+			<article className='bottom-container'>{toolbar}</article>
 		</Container>
 	);
 };

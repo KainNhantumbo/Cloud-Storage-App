@@ -11,9 +11,6 @@ export const GlobalStyles = createGlobalStyle`
 
   span, label {
     user-select: none;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
   }
 
   body {
@@ -30,6 +27,8 @@ export const GlobalStyles = createGlobalStyle`
 
   html {
     overflow-x: hidden;
+    margin: 0;
+    padding: 0;
   }
 
   ::-webkit-scrollbar {

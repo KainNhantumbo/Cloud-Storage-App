@@ -1,48 +1,44 @@
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
 import { AsideContainer as Container } from '../styles/aside';
-import {
-	BiTrash,
-	BiTrashAlt,
-	BsTrash,
-	FaClock,
-	FaCloud,
-	FaTrash,
-	TiCloudStorage,
-	TiTrash,
-} from 'react-icons/all';
+import { BiTrash, FaClock, FaCloud, FaTrashAlt } from 'react-icons/all';
+
 export const Aside: FC = () => {
 	return (
 		<Container>
-			<div>
-				<h1>My Drive</h1>
-				<section>
-					<h3>File Manager</h3>
+			<h1>My Drive</h1>
+			<div className='items-container'>
+				<section className='upper-section'>
+					<h3>
+						<span>File Manager</span>
+					</h3>
 					<ul>
-						<li>
-							<Link to={'/'}>
+						<Link to={'/'}>
+							<li>
 								<FaCloud />
 								<span>Cloud Drive</span>
-							</Link>
-						</li>
-						<li>
-							<Link to={'/'}>
+							</li>
+						</Link>
+						<Link to={'/'}>
+							<li>
 								<FaClock />
 								<span>Recents</span>
-							</Link>
-						</li>
-						<li>
-							<Link to={'/'}>
-								<BiTrash />
+							</li>
+						</Link>
+						<Link to={'/'}>
+							<li>
+								<FaTrashAlt />
 								<span>Rubbish Bin</span>
-							</Link>
-						</li>
+							</li>
+						</Link>
 					</ul>
 				</section>
-				<section>
-					<h3>Storage</h3>
+				<section className='bottom-section'>
+					<h3>
+						<span>Storage</span>
+					</h3>
 					<div>
-						<span>Free</span>
+						<span>Plan: Free</span>
 					</div>
 					<div>
 						<input readOnly type='range' value={'20'} max={'100'} min={'0'} />

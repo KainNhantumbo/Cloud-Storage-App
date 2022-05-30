@@ -7,12 +7,12 @@ export const AsideContainer = styled.aside`
 	padding: 15px;
 	background: rgb(${({ theme }) => theme.backgroundAlt});
 	box-shadow: 0 0 3px rgb(${({ theme }) => theme.shadows});
+  position: fixed;
+  z-index: 5000;
 
 	.items-container {
 		height: 85%;
 		display: flex;
-		justify-content: flex-start;
-		align-content: space-between;
 		justify-content: space-between;
 		flex-direction: column;
 		gap: 20px;

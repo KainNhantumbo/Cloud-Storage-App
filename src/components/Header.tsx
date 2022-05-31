@@ -36,6 +36,13 @@ export const Header: React.FC<Props> = ({ toolbar }): JSX.Element => {
 			{userPanelStatus ? (
 				<div className='user-panel' onClick={(e) => userPanelHandler(e)}>
 					<section className='panel-container'>
+						<button
+							onClick={(e) => setUserPanelStatus((prevState) => !prevState)}
+							className='close-panel'
+							title={'Close'}
+						>
+							<FiX />
+						</button>
 						<div className='panel-info'>
 							<FaUserCircle title='User account' />
 							<div className='panel-details'>
@@ -44,7 +51,7 @@ export const Header: React.FC<Props> = ({ toolbar }): JSX.Element => {
 							</div>
 						</div>
 						<div className='panel-actions'>
-							<div onClick={e => themeSwitcher()}>
+							<div onClick={(e) => themeSwitcher()}>
 								<IoColorPalette />
 								<span>Switch theme</span>
 							</div>

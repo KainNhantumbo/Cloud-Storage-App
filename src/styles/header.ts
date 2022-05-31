@@ -132,6 +132,31 @@ export const HeaderContainer = styled.header`
 				font-weight: 500;
 			}
 
+			.close-panel {
+				position: absolute;
+				width: 28px;
+				height: 28px;
+				right: 5px;
+				top: 5px;
+				border: none;
+				background: none;
+				border-radius: 50px;
+				display: grid;
+				place-content: center;
+				padding: 4px;
+				cursor: pointer;
+				:hover {
+					background: rgba(${({ theme }) => theme.shadows}, 0.8);
+				}
+
+				svg {
+					pointer-events: none;
+					width: 20px;
+					height: 20px;
+					color: rgb(${({ theme }) => theme.font});
+				}
+			}
+
 			.panel-info {
 				display: flex;
 				justify-content: flex-start;
@@ -139,7 +164,7 @@ export const HeaderContainer = styled.header`
 				flex-direction: row;
 				gap: 10px;
 				padding-bottom: 5px;
-				border-bottom: 1px solid rgb(${({ theme }) => theme.hover});
+				border-bottom: 1px solid rgb(${({ theme }) => theme.inner});
 
 				span {
 					white-space: nowrap;
@@ -172,7 +197,7 @@ export const HeaderContainer = styled.header`
 					border-radius: 3px;
 					padding: 5px 7px;
 					color: rgb(${({ theme }) => theme.font});
-					border-bottom: 1px solid rgb(${({ theme }) => theme.hover});
+					border-bottom: 1px solid rgb(${({ theme }) => theme.inner});
 					font-weight: 500;
 					cursor: pointer;
 

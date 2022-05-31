@@ -18,8 +18,8 @@ const ThemeSeter: FC<Props> = ({ children }) => {
 	const [mode, setMode] = useState(primary);
 
 	const themePrefers = (): void => {
-		let theme_data = JSON.parse(localStorage.getItem('Settings'));
-
+		let key: string = 'Settings';
+		let theme_data: any = JSON.parse(localStorage.getItem(key));
 		if (!theme_data.dark_mode || theme_data.dark_mode === undefined) {
 			theme_data.dark_mode = false;
 			localStorage.setItem('Settings', JSON.stringify(theme_data));

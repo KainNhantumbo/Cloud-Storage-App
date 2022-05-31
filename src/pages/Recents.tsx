@@ -10,7 +10,7 @@ const Recents: FC = () => {
 
 	return (
 		<Container>
-			<Header toolbar={<Toolbox />} />
+			<Header toolbar={<Toolbox title={'Recents'} />} />
 			<article className='content'>
 				{itemsData.length === 0 ? (
 					<StatusMessage

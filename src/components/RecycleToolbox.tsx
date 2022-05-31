@@ -2,15 +2,22 @@ import { FC } from 'react';
 import { ToolboxContainer as Container } from '../styles/toolbox';
 import {
 	BiCloudUpload,
+	BiTrash,
+	BiTrashAlt,
 	BsFillGridFill,
 	FaBars,
 	FaFolderPlus,
+	FaTrash,
+	FaTrashAlt,
+	FaTrashRestore,
+	FaTrashRestoreAlt,
 } from 'react-icons/all';
+
 interface Props {
 	title?: string;
 }
 
-export const Toolbox: FC<Props> = ({ title }) => {
+export const RecycleToolbox: FC<Props> = ({ title }) => {
 	return (
 		<Container>
 			<section className='left-container'>
@@ -18,13 +25,13 @@ export const Toolbox: FC<Props> = ({ title }) => {
 			</section>
 			<section className='right-container'>
 				<div className='actions'>
-					<button title='Create a new folder'>
-						<FaFolderPlus />
-						<span>Create folder</span>
+					<button title='Empty Recycle Bin'>
+						<FaTrashAlt />
+						<span>Empty Recycle Bin</span>
 					</button>
-					<button title='Upload files'>
-						<BiCloudUpload />
-						<span>Upload files</span>
+					<button title='Restore All'>
+						<FaTrashRestoreAlt />
+						<span>Restore All</span>
 					</button>
 				</div>
 				<div className='switch-view'>

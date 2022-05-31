@@ -1,8 +1,8 @@
-import { FC,useState  } from 'react';
+import { FC, useState } from 'react';
 import { HomeContainer as Container } from '../styles/home';
 import { Toolbox } from '../components/Toolbox';
 import { Header } from '../components/Header';
-import { BiWifiOff} from 'react-icons/all';
+import { BiWifiOff } from 'react-icons/all';
 import { StatusMessage } from '../components/StatusMessage';
 
 const Home: FC = () => {
@@ -10,7 +10,7 @@ const Home: FC = () => {
 
 	return (
 		<Container>
-			<Header toolbar={<Toolbox />} />
+			<Header toolbar={<Toolbox title={'Cloud Drive'} />} />
 			<article className='content'>
 				{itemsData.length === 0 ? (
 					<StatusMessage

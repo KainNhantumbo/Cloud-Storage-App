@@ -33,7 +33,6 @@ export const ToolboxContainer = styled.section`
 				cursor: pointer;
 
 				:hover {
-					color: rgba(${({ theme }) => theme.secondary});
 					background: rgb(${({ theme }) => theme.hover});
 					transition: all 200ms ease;
 				}

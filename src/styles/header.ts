@@ -88,11 +88,8 @@ export const HeaderContainer = styled.header`
 				cursor: pointer;
 
 				:hover {
-					background: rgba(${({ theme }) => theme.inner}, 0.8);
-					svg {
-						color: rgb(${({ theme }) => theme.secondary});
-						pointer-events: none;
-					}
+					background: rgba(${({ theme }) => theme.hover}, 0.8);
+					transition: all 200ms ease-in-out;
 				}
 			}
 
@@ -100,6 +97,7 @@ export const HeaderContainer = styled.header`
 				width: 25px;
 				height: 25px;
 				color: rgb(${({ theme }) => theme.primary});
+				pointer-events: none;
 			}
 		}
 	}
@@ -146,7 +144,7 @@ export const HeaderContainer = styled.header`
 				padding: 4px;
 				cursor: pointer;
 				:hover {
-					background: rgba(${({ theme }) => theme.shadows}, 0.8);
+					background: rgba(${({ theme }) => theme.hover}, 0.8);
 				}
 
 				svg {
@@ -154,6 +152,7 @@ export const HeaderContainer = styled.header`
 					width: 20px;
 					height: 20px;
 					color: rgb(${({ theme }) => theme.font});
+					transition: all 200ms ease-in-out;
 				}
 			}
 
@@ -163,7 +162,7 @@ export const HeaderContainer = styled.header`
 				align-items: center;
 				flex-direction: row;
 				gap: 10px;
-				padding-bottom: 5px;
+				padding-bottom: 10px;
 				border-bottom: 1px solid rgb(${({ theme }) => theme.inner});
 
 				span {
@@ -188,38 +187,34 @@ export const HeaderContainer = styled.header`
 				display: flex;
 				flex-flow: column nowrap;
 				justify-content: flex-start;
-				gap: 10px;
 
 				div {
 					border: none;
 					background: none;
 					position: relative;
 					border-radius: 3px;
-					padding: 5px 7px;
+					padding: 8px 7px;
 					color: rgb(${({ theme }) => theme.font});
 					border-bottom: 1px solid rgb(${({ theme }) => theme.inner});
 					font-weight: 500;
 					cursor: pointer;
 
 					:hover {
-						svg {
-							color: rgba(${({ theme }) => theme.secondary});
-						}
 						background: rgb(${({ theme }) => theme.hover});
 						transition: all 200ms ease;
 					}
 
 					svg {
 						position: absolute;
-						width: 16px;
-						height: 16px;
-						top: 8px;
+						width: 18px;
+						height: 18px;
+						top: 10px;
 						left: 7px;
 						color: rgba(${({ theme }) => theme.primary});
 					}
 
 					span {
-						padding-left: 20px;
+						padding-left: 25px;
 					}
 				}
 			}

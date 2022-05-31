@@ -15,7 +15,7 @@ export const primary: ThemeObj = {
 export const dark: ThemeObj = {
 	primary: '108, 161, 246',
 	secondary: '64, 52, 82',
-	hover: '223, 235, 248',
+	hover: '88, 65, 83',
 	font: '178, 177, 185',
 	inner: '55, 55, 55',
 	text: '240, 240,240',

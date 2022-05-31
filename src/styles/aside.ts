@@ -63,8 +63,9 @@ export const AsideContainer = styled.aside`
 				position: relative;
 				border-radius: 3px;
 				:hover {
-					color: rgb(${({ theme }) => theme.secondary});
+				
 					background: rgb(${({ theme }) => theme.hover});
+					transition: all 200ms ease;
 				}
 
 				svg {
@@ -73,6 +74,7 @@ export const AsideContainer = styled.aside`
 					height: 18px;
 					top: 7px;
 					left: 8px;
+					color: rgb(${({ theme }) => theme.primary});
 				}
 
 				span {

@@ -1,10 +1,8 @@
-import * as React from 'react';
-import { FC } from 'react';
-import { useState } from 'react';
+import { FC,useState  } from 'react';
 import { HomeContainer as Container } from '../styles/home';
 import { Toolbox } from '../components/Toolbox';
 import { Header } from '../components/Header';
-import { BiWifiOff, TiWiFiOutline } from 'react-icons/all';
+import { BiWifiOff} from 'react-icons/all';
 import { StatusMessage } from '../components/StatusMessage';
 
 const Home: FC = () => {

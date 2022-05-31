@@ -10,6 +10,7 @@ import {
 } from 'react-icons/all';
 import { HeaderContainer as Container } from '../styles/header';
 import { useThemeContext } from '../context/ThemeSeter';
+import { useNavigate } from 'react-router-dom';
 
 interface Props {
 	toolbar?: JSX.Element;
@@ -18,6 +19,7 @@ interface Props {
 export const Header: React.FC<Props> = ({ toolbar }): JSX.Element => {
 	const [userPanelStatus, setUserPanelStatus] = useState(false);
 	const { themeSwitcher }: any = useThemeContext();
+	const navigate = useNavigate();
 
 	const userPanelHandler = (
 		e: React.MouseEvent<HTMLDivElement, MouseEvent> | any
@@ -55,7 +57,7 @@ export const Header: React.FC<Props> = ({ toolbar }): JSX.Element => {
 								<IoColorPalette />
 								<span>Switch theme</span>
 							</div>
-							<div>
+							<div onClick={(e) => navigate('/settings')}>
 								<FaCog />
 								<span>Settings</span>
 							</div>
@@ -81,7 +83,7 @@ export const Header: React.FC<Props> = ({ toolbar }): JSX.Element => {
 					</form>
 				</section>
 				<section className='left-section'>
-					<button title='Preferences'>
+					<button title='Preferences' onClick={(e) => navigate('/settings')}>
 						<FaCog title='Preferences' />
 					</button>
 					<button

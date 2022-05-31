@@ -1,8 +1,7 @@
 import type { ReactNode, FC } from 'react';
 import { createContext, useContext } from 'react';
-import { ThemeContext } from 'styled-components';
 import { GlobalStyles } from '../styles/Globalstyles';
-import { primary, dark } from '../themes/themes';
+import ThemeSeter from './ThemeSeter'
 
 interface props {
 	children: ReactNode;
@@ -12,12 +11,12 @@ const AppContext = createContext({});
 
 const GlobalContext: FC<props> = ({ children }) => {
 	return (
-		<ThemeContext.Provider value={primary}>
+		<ThemeSeter >
       <GlobalStyles/>
-			<AppContext.Provider value={primary}>
+			<AppContext.Provider value={{}}>
         {children}
       </AppContext.Provider>
-		</ThemeContext.Provider>
+		</ThemeSeter>
 	);
 };
 

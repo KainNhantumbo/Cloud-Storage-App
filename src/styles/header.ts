@@ -91,6 +91,7 @@ export const HeaderContainer = styled.header`
 					background: rgba(${({ theme }) => theme.inner}, 0.8);
 					svg {
 						color: rgb(${({ theme }) => theme.secondary});
+						pointer-events: none;
 					}
 				}
 			}
@@ -107,7 +108,7 @@ export const HeaderContainer = styled.header`
 		position: fixed;
 		width: 100vw;
 		height: 100vh;
-		background: rgba(${({ theme }) => theme.hover}, 0.8);
+		background: transparent;
 		z-index: 6000;
 		display: grid;
 		place-content: center;
@@ -176,7 +177,9 @@ export const HeaderContainer = styled.header`
 					cursor: pointer;
 
 					:hover {
-						color: rgba(${({ theme }) => theme.secondary});
+						svg {
+							color: rgba(${({ theme }) => theme.secondary});
+						}
 						background: rgb(${({ theme }) => theme.hover});
 						transition: all 200ms ease;
 					}
@@ -187,6 +190,7 @@ export const HeaderContainer = styled.header`
 						height: 16px;
 						top: 8px;
 						left: 7px;
+						color: rgba(${({ theme }) => theme.primary});
 					}
 
 					span {

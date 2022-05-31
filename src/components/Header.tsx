@@ -15,12 +15,24 @@ interface Props {
 }
 
 export const Header: React.FC<Props> = ({ toolbar }): JSX.Element => {
-	const [userPanelStatus, setUserPanelStatus] = useState(true);
+	const [userPanelStatus, setUserPanelStatus] = useState(false);
+
+	const userPanelHandler = (
+		e: React.MouseEvent<HTMLDivElement, MouseEvent> | any
+	): void => {
+		e.stopPropagation();
+		if (
+			e.target.classList.contains('user-panel') ||
+			e.target.classList.contains('user-button')
+		) {
+			setUserPanelStatus((presvState) => !presvState);
+		}
+	};
 
 	return (
 		<Container>
 			{userPanelStatus ? (
-				<div className='user-panel'>
+				<div className='user-panel' onClick={(e) => userPanelHandler(e)}>
 					<section className='panel-container'>
 						<div className='panel-info'>
 							<FaUserCircle title='User account' />
@@ -63,7 +75,11 @@ export const Header: React.FC<Props> = ({ toolbar }): JSX.Element => {
 					<button title='Preferences'>
 						<FaCog title='Preferences' />
 					</button>
-					<button title='User account'>
+					<button
+						title='User account'
+						className='user-button'
+						onClick={(e) => userPanelHandler(e)}
+					>
 						<FaUserCircle title='User account' />
 					</button>
 				</section>

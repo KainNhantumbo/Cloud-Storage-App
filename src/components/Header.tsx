@@ -9,6 +9,7 @@ import {
 	IoLogOut,
 } from 'react-icons/all';
 import { HeaderContainer as Container } from '../styles/header';
+import { useThemeContext } from '../context/ThemeSeter';
 
 interface Props {
 	toolbar?: JSX.Element;
@@ -16,6 +17,7 @@ interface Props {
 
 export const Header: React.FC<Props> = ({ toolbar }): JSX.Element => {
 	const [userPanelStatus, setUserPanelStatus] = useState(false);
+	const { themeSwitcher }: any = useThemeContext();
 
 	const userPanelHandler = (
 		e: React.MouseEvent<HTMLDivElement, MouseEvent> | any
@@ -42,7 +44,7 @@ export const Header: React.FC<Props> = ({ toolbar }): JSX.Element => {
 							</div>
 						</div>
 						<div className='panel-actions'>
-							<div>
+							<div onClick={e => themeSwitcher()}>
 								<IoColorPalette />
 								<span>Switch theme</span>
 							</div>

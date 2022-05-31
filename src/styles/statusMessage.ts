@@ -9,6 +9,7 @@ export const StatusMessageContainer = styled.section`
 	color: rgb(${({ theme }) => theme.secondary});
 	font-weight: 500;
 	font-size: 1.2rem;
+	gap: 20px;
 	svg {
 		width: 90px;
 		height: 90px;

@@ -2,7 +2,7 @@ import { FC, ReactNode } from 'react';
 import { StatusMessageContainer as Container } from '../styles/statusMessage';
 interface Props {
 	icon: ReactNode | JSX.Element;
-	message: string;
+	message?: string;
 	title: string;
 }
 

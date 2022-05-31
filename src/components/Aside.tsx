@@ -22,16 +22,16 @@ export const Aside: FC = () => {
 								<span>Cloud Drive</span>
 							</li>
 						</Link>
-						<Link to={'/'}>
+						<Link to={'/recents'}>
 							<li>
 								<FaClock />
 								<span>Recents</span>
 							</li>
 						</Link>
-						<Link to={'/'}>
+						<Link to={'/recycle-bin'}>
 							<li>
 								<FaTrashAlt />
-								<span>Rubbish Bin</span>
+								<span>Recycle Bin</span>
 							</li>
 						</Link>
 					</ul>

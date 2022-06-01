@@ -10,7 +10,7 @@ interface Props {
 	title?: string;
 }
 
-export const Toolbox: FC<Props> = ({ title }) => {
+export const Toolbox: FC<Props> = ({ title }): JSX.Element => {
 	return (
 		<Container>
 			<section className='left-container'>

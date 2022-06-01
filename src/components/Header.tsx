@@ -5,8 +5,6 @@ import {
 	FaCog,
 	FaUserCircle,
 	FiX,
-	IoColorPalette,
-	IoLogOut,
 } from 'react-icons/all';
 import { HeaderContainer as Container } from '../styles/header';
 import { useThemeContext } from '../context/ThemeSeter';
@@ -17,59 +15,10 @@ interface Props {
 }
 
 export const Header: React.FC<Props> = ({ toolbar }): JSX.Element => {
-	const [userPanelStatus, setUserPanelStatus] = useState(false);
-	const { themeSwitcher }: any = useThemeContext();
 	const navigate = useNavigate();
-
-	const userPanelHandler = (
-		e: React.MouseEvent<HTMLDivElement, MouseEvent> | any
-	): void => {
-		e.stopPropagation();
-		if (
-			e.target.classList.contains('user-panel') ||
-			e.target.classList.contains('user-button')
-		) {
-			setUserPanelStatus((presvState) => !presvState);
-		}
-	};
 
 	return (
 		<Container>
-			{userPanelStatus ? (
-				<div className='user-panel' onClick={(e) => userPanelHandler(e)}>
-					<section className='panel-container'>
-						<button
-							onClick={(e) => setUserPanelStatus((prevState) => !prevState)}
-							className='close-panel'
-							title={'Close'}
-						>
-							<FiX />
-						</button>
-						<div className='panel-info'>
-							<FaUserCircle title='User account' />
-							<div className='panel-details'>
-								<span>Maya Dorreto</span>
-								<span>mayladorreto@mailer.co.xs</span>
-							</div>
-						</div>
-						<div className='panel-actions'>
-							<div onClick={(e) => themeSwitcher()}>
-								<IoColorPalette />
-								<span>Switch theme</span>
-							</div>
-							<div onClick={(e) => navigate('/settings')}>
-								<FaCog />
-								<span>Settings</span>
-							</div>
-							<div>
-								<IoLogOut />
-								<span>Log out</span>
-							</div>
-						</div>
-					</section>
-				</div>
-			) : null}
-
 			<article className='upper-container'>
 				<section className='right-section'>
 					<form>

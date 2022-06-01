@@ -3,12 +3,14 @@ import {
 	BiChart,
 	BiErrorCircle,
 	BsFlagFill,
+	FaArrowLeft,
 	FaCloud,
 	FaCode,
 	FaCog,
 	FaCopyright,
 	FaEnvelope,
 	FaGithub,
+	FaHistory,
 	FaMoneyCheck,
 	FaSeedling,
 	FaTimes,
@@ -21,12 +23,60 @@ import {
 	SiAboutdotme,
 } from 'react-icons/all';
 import { SettingsContainer as Container } from '../styles/settings';
+import { useState } from 'react';
 
 interface Props {}
 
 const Settings: FC<Props> = (): JSX.Element => {
+	const [dialogStatus, setDialogStatus] = useState(false);
+
+	const dialogModalToggler = (
+		event: React.MouseEvent<HTMLElement, MouseEvent> | any
+	): void => {
+		event.stopPropagation();
+		const targetClass = event.target.classList;
+		if (targetClass.contains('dialog-modal')) {
+			setDialogStatus((prevState) => !prevState);
+			return;
+		}
+		if (targetClass.contains('prompt-cancel')) {
+			setDialogStatus((prevState) => !prevState);
+			return;
+		}
+	};
+
 	return (
 		<Container>
+			{dialogStatus ? (
+				<section
+					className='dialog-modal'
+					onClick={(e) => dialogModalToggler(e)}
+				>
+					<div className='dialog-prompt'>
+						<div className='prompt-info'>
+							<span className='prompt-title'>Are you sure?</span>
+							<p className='prompt-message'>
+								Your account will be deleted and all your files will be
+								permanently lost.
+							</p>
+						</div>
+						<div className='prompt-actions'>
+							<button
+								className='prompt-cancel'
+								onClick={(e) => dialogModalToggler(e)}
+							>
+								<FaArrowLeft />
+								<span>No, cancel</span>
+							</button>
+							<button>
+								<FaTrashAlt />
+								<span>Yes, delete my account</span>
+							</button>
+						</div>
+					</div>
+				</section>
+			) : null}
+
 			<section className='false-header'>
 				<h1>
 					<FaCog />
@@ -77,7 +127,7 @@ const Settings: FC<Props> = (): JSX.Element => {
 						<div className='storage-details'>
 							<h3>
 								<FaSeedling />
-								<span>Plan</span>
+								<span>Subscription type</span>
 							</h3>
 							<span>Free</span>
 						</div>
@@ -94,6 +144,13 @@ const Settings: FC<Props> = (): JSX.Element => {
 								<span>Balance</span>
 							</h3>
 							<span>$0.00</span>
+						</div>
+						<div className='storage-details'>
+							<h3>
+								<FaHistory />
+								<span>Renews on</span>
+							</h3>
+							<span>No active subscription</span>
 						</div>
 						<button>
 							<GiUpgrade />
@@ -116,7 +173,7 @@ const Settings: FC<Props> = (): JSX.Element => {
 								<i>Warning: </i> You will not be able to access your account
 								data after you confirm this action.
 							</p>
-							<button>
+							<button onClick={(e) => setDialogStatus(true)}>
 								<FaTrashAlt />
 								<span>Delete account</span>
 							</button>

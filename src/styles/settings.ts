@@ -60,6 +60,7 @@ export const SettingsContainer = styled.main`
 			background: rgb(${({ theme }) => theme.backgroundAlt});
 			box-shadow: 0 0 10px rgb(${({ theme }) => theme.shadows});
 			max-width: 600px;
+			margin: 0 10px;
 
 			.prompt-info {
 				display: flex;

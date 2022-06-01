@@ -8,9 +8,13 @@ import {
 } from 'react-icons/all';
 interface Props {
 	title?: string;
+	setCreateFolderState: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export const Toolbox: FC<Props> = ({ title }): JSX.Element => {
+export const Toolbox: FC<Props> = ({
+	title,
+	setCreateFolderState,
+}): JSX.Element => {
 	return (
 		<Container>
 			<section className='left-container'>
@@ -18,7 +22,10 @@ export const Toolbox: FC<Props> = ({ title }): JSX.Element => {
 			</section>
 			<section className='right-container'>
 				<div className='actions'>
-					<button title='Create a new folder'>
+					<button
+						title='Create a new folder'
+						onClick={(e) => setCreateFolderState((prevState) => !prevState)}
+					>
 						<FaFolderPlus />
 						<span>Create folder</span>
 					</button>

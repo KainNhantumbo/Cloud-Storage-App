@@ -11,19 +11,19 @@ import { useThemeContext } from '../../context/ThemeSeter';
 import { useNavigate } from 'react-router-dom';
 
 interface Props {
-	userPanelHandler: any;
+	canceler: any;
 	setUserPanelStatus: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export const UserPanel: FC<Props> = ({
-	userPanelHandler,
+	canceler,
 	setUserPanelStatus,
 }): JSX.Element => {
 	const { themeSwitcher }: any = useThemeContext();
 	const navigate = useNavigate();
 
 	return (
-		<Container className='user-panel' onClick={(e) => userPanelHandler(e)}>
+		<Container className='user-panel' onClick={(e) => canceler(e)}>
 			<section className='panel-container'>
 				<button
 					onClick={(e) => setUserPanelStatus((prevState) => !prevState)}

@@ -15,8 +15,8 @@ const RecycleBin: FC = () => {
 				{itemsData.length === 0 ? (
 					<StatusMessage
 						icon={<FaRecycle />}
-						title={'Nothing to Recycle.'}
-						message={'Have a nice day :)'}
+						title={'Your recycle bin is empty.'}
+						message={'Nothing to recycle.'}
 					/>
 				) : null}
 			</article>

@@ -65,9 +65,26 @@ export const SettingsContainer = styled.main`
 				font-weight: 500;
 			}
 		}
+		h3 {
+			display: inline;
+			position: relative;
+			line-height: 1.4rem;
+
+			svg {
+				width: 16px;
+				height: 16px;
+				position: absolute;
+				top: 2px;
+				left: 0;
+				color: rgb(${({ theme }) => theme.secondary});
+			}
+			span {
+				padding-left: 25px;
+				font-weight: 500;
+			}
+		}
 
 		.user-container {
-			border-bottom: 1px solid rgb(${({ theme }) => theme.inner});
 			border-top: 1px solid rgb(${({ theme }) => theme.inner});
 			padding: 20px;
 			display: flex;
@@ -97,27 +114,74 @@ export const SettingsContainer = styled.main`
 					white-space: nowrap;
 					overflow: hidden;
 					text-overflow: ellipsis;
-
-					h3 {
-						display: inline;
-						position: relative;
-						line-height: 1.4rem;
-
-						svg {
-							width: 16px;
-							height: 16px;
-							position: absolute;
-							top: 2px;
-							left: 0;
-							color: rgb(${({ theme }) => theme.secondary});
-						}
-						span {
-							padding-left: 25px;
-							font-weight: 500;
-						}
-					}
 				}
 			}
+		}
+
+		.account-container {
+			border-top: 1px solid rgb(${({ theme }) => theme.inner});
+			padding: 20px;
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+			justify-content: flex-start;
+
+			button {
+				border: none;
+				background: none;
+				border-radius: 3px;
+				background: rgb(${({ theme }) => theme.inner});
+				position: relative;
+				padding: 7px 10px;
+				color: rgb(${({ theme }) => theme.font});
+				width: fit-content;
+				cursor: pointer;
+
+				:hover {
+					background: rgb(${({ theme }) => theme.hover});
+					transition: all 200ms ease-in-out;
+				}
+
+				svg {
+					width: 18px;
+					height: 18px;
+					position: absolute;
+					top: 7px;
+					left: 7px;
+				}
+				span {
+					padding-left: 20px;
+					font-weight: 500;
+				}
+			}
+
+			.title > span {
+				color: red;
+			}
+
+			.user-actions,
+			.info {
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-start;
+				gap: 10px;
+
+				.info {
+				}
+
+				i {
+					color: rgb(${({ theme }) => theme.primary});
+				}
+			}
+		}
+
+		.about-container {
+			border-top: 1px solid rgb(${({ theme }) => theme.inner});
+			padding: 20px;
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+			justify-content: flex-start;
 		}
 	}
 `;

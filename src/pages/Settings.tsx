@@ -1,13 +1,22 @@
 import { FC } from 'react';
 import {
+	BiChart,
+	BiStats,
 	BiUser,
 	BsFlagFill,
 	CgNametag,
 	FaCog,
 	FaEnvelope,
+	FaTimes,
+	FaTrashAlt,
 	FaUser,
 	FaUserCircle,
+	FcAbout,
+	MdAccountCircle,
+	RiAccountCircleFill,
+	SiAboutdotme,
 	SiNamebase,
+	TiTrash,
 } from 'react-icons/all';
 import { SettingsContainer as Container } from '../styles/settings';
 
@@ -57,12 +66,33 @@ const Settings: FC<Props> = (): JSX.Element => {
 						</div>
 					</section>
 				</section>
-				<section className='account-section'>
+				<section className='account-container'>
+					<h2 className='title'>
+						<BiChart />
+						<span>Danger Zone</span>
+					</h2>
 					<div className='user-actions'>
 						<h3>
+							<FaTimes />
 							<span>Delete Account</span>
 						</h3>
+						<div className='info'>
+							<p>
+								<i>Warning: </i> You will not be able to access your account
+								data after you confirm this action.
+							</p>
+							<button>
+								<FaTrashAlt />
+								<span>Delete Account</span>
+							</button>
+						</div>
 					</div>
+				</section>
+				<section className='about-container'>
+					<h2 className='title'>
+						<SiAboutdotme />
+						<span>About</span>
+					</h2>
 				</section>
 			</article>
 		</Container>

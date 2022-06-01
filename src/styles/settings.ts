@@ -43,7 +43,7 @@ export const SettingsContainer = styled.main`
 		min-height: 100vh;
 		width: 100%;
 		max-width: 100%;
-		padding: 90px 20px 50px 20px;
+		padding: 90px 20px 0 20px;
 
 		display: flex;
 		flex-direction: column;
@@ -166,7 +166,22 @@ export const SettingsContainer = styled.main`
 				justify-content: flex-start;
 				gap: 10px;
 
+				h3 {
+					background: rgb(${({ theme }) => theme.inner});
+					padding: 2px 5px;
+					border-radius: 3px;
+					border-left: 2px solid red;
+					border-right: 2px solid red;
+					svg {
+						left: 8px;
+						top: 5px;
+						color: rgb(${({ theme }) => theme.primary})
+					}
+				}
 				.info {
+					p {
+						line-height: 1.6rem;
+					}
 				}
 
 				i {
@@ -182,6 +197,38 @@ export const SettingsContainer = styled.main`
 			flex-direction: column;
 			gap: 10px;
 			justify-content: flex-start;
+
+			.about-section {
+				display: grid;
+				grid-template-columns: 1fr 2fr;
+				align-items: center;
+				gap: 10px;
+				.logo {
+					position: relative;
+					color: rgb(${({ theme }) => theme.primary});
+					svg {
+						position: absolute;
+						width: 50px;
+						height: 50px;
+						top: -8px;
+						left: 0;
+					}
+					span {
+						font-size: 2rem;
+						font-weight: 600;
+						padding-left: 60px;
+					}
+				}
+				.app-info {
+					display: flex;
+					flex-direction: column;
+					justify-content: flex-start;
+					gap: 10px;
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
+				}
+			}
 		}
 	}
 `;

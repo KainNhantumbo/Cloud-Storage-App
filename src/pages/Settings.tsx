@@ -1,22 +1,19 @@
 import { FC } from 'react';
 import {
 	BiChart,
-	BiStats,
-	BiUser,
 	BsFlagFill,
-	CgNametag,
+	FaCloud,
+	FaCode,
 	FaCog,
+	FaCopyright,
 	FaEnvelope,
+	FaGithub,
 	FaTimes,
 	FaTrashAlt,
 	FaUser,
 	FaUserCircle,
-	FcAbout,
-	MdAccountCircle,
-	RiAccountCircleFill,
+	GiMite,
 	SiAboutdotme,
-	SiNamebase,
-	TiTrash,
 } from 'react-icons/all';
 import { SettingsContainer as Container } from '../styles/settings';
 
@@ -38,7 +35,7 @@ const Settings: FC<Props> = (): JSX.Element => {
 						<span>User profile</span>
 					</h2>
 					<section className='section-container'>
-						<div className='user-avatar'>
+						<div title='User avatar' className='user-avatar'>
 							<FaUserCircle />
 						</div>
 						<div className='user-details'>
@@ -47,21 +44,21 @@ const Settings: FC<Props> = (): JSX.Element => {
 									<FaUser />
 									<span>Name: </span>
 								</h3>
-								<span title='user name'>Mayara Dorreto</span>
+								<span title='User name'>Mayara Dorreto</span>
 							</div>
 							<div className='user-info'>
 								<h3>
 									<FaEnvelope />
 									<span>E-mail: </span>
 								</h3>
-								<span>mayaradorreto@mailer.com</span>
+								<span title='User e-mail'>mayaradorreto@mailer.com</span>
 							</div>
 							<div className='user-info'>
 								<h3>
 									<BsFlagFill />
 									<span>Country: </span>
 								</h3>
-								<span>Austrália</span>
+								<span title='User country'>Austrália</span>
 							</div>
 						</div>
 					</section>
@@ -93,6 +90,58 @@ const Settings: FC<Props> = (): JSX.Element => {
 						<SiAboutdotme />
 						<span>About</span>
 					</h2>
+					<section className='about-section'>
+						<section className='logo'>
+							<FaCloud />
+							<span>Nava Drive</span>
+						</section>
+						<section className='app-info'>
+							<div className='user-info'>
+								<h3>
+									<FaCloud />
+									<span>Nava Cloud Drive V0.0.1 (beta)</span>
+								</h3>
+							</div>
+							<div className='user-info'>
+								<h3>
+									<FaCode />
+									<span title='Kain Nhantumbo'>Developer: Kain Nhantumbo</span>
+								</h3>
+							</div>
+							<div className='user-info'>
+								<h3>
+									<FaGithub />
+									<span title='github.com/KainNhantumbo'>
+										Github:
+										<a
+											href='https://github.com/KainNhantumbo'
+											rel='noreferrer'
+											target={'_blank'}
+										>
+											{' '}
+											github.com/KainNhantumbo
+										</a>
+									</span>
+								</h3>
+							</div>
+							<div className='user-info'>
+								<h3>
+									<FaCopyright />
+									<span title='Copyright &copy; 2022 Kain Nhantumbo'>
+										Copyright &copy; 2022 Kain Nhantumbo
+									</span>
+								</h3>
+							</div>
+							<div className='user-info'>
+								<h3>
+									<GiMite />
+									<span title='Licensed under GNU GPL V3'>
+										Licensed under GNU GPL V3
+									</span>
+								</h3>
+							</div>
+						</section>
+					</section>
 				</section>
 			</article>
 		</Container>

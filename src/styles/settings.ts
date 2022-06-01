@@ -49,6 +49,35 @@ export const SettingsContainer = styled.main`
 		flex-direction: column;
 		justify-content: flex-start;
 
+		button {
+			border: none;
+			background: none;
+			border-radius: 3px;
+			position: relative;
+			padding: 7px 10px;
+			color: rgb(${({ theme }) => theme.text});
+			background: rgb(${({ theme }) => theme.primary});
+			width: fit-content;
+			cursor: pointer;
+
+			:hover {
+				background: rgb(${({ theme }) => theme.secondary});
+				transition: all 200ms ease-in-out;
+			}
+
+			svg {
+				width: 18px;
+				height: 18px;
+				position: absolute;
+				top: 7px;
+				left: 7px;
+			}
+			span {
+				padding-left: 20px;
+				font-weight: 500;
+			}
+		}
+
 		.title {
 			position: relative;
 			svg {
@@ -126,35 +155,6 @@ export const SettingsContainer = styled.main`
 			gap: 10px;
 			justify-content: flex-start;
 
-			button {
-				border: none;
-				background: none;
-				border-radius: 3px;
-				background: rgb(${({ theme }) => theme.inner});
-				position: relative;
-				padding: 7px 10px;
-				color: rgb(${({ theme }) => theme.font});
-				width: fit-content;
-				cursor: pointer;
-
-				:hover {
-					background: rgb(${({ theme }) => theme.hover});
-					transition: all 200ms ease-in-out;
-				}
-
-				svg {
-					width: 18px;
-					height: 18px;
-					position: absolute;
-					top: 7px;
-					left: 7px;
-				}
-				span {
-					padding-left: 20px;
-					font-weight: 500;
-				}
-			}
-
 			.title > span {
 				color: red;
 			}
@@ -175,7 +175,7 @@ export const SettingsContainer = styled.main`
 					svg {
 						left: 8px;
 						top: 5px;
-						color: rgb(${({ theme }) => theme.primary})
+						color: rgb(${({ theme }) => theme.primary});
 					}
 				}
 				.info {
@@ -200,12 +200,14 @@ export const SettingsContainer = styled.main`
 
 			.about-section {
 				display: grid;
-				grid-template-columns: 1fr 2fr;
+				grid-template-columns: 1fr 1fr;
 				align-items: center;
 				gap: 10px;
+
 				.logo {
 					position: relative;
 					color: rgb(${({ theme }) => theme.primary});
+
 					svg {
 						position: absolute;
 						width: 50px;
@@ -229,6 +231,15 @@ export const SettingsContainer = styled.main`
 					text-overflow: ellipsis;
 				}
 			}
+		}
+
+		.storage-container {
+			border-top: 1px solid rgb(${({ theme }) => theme.inner});
+			padding: 20px;
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+			justify-content: flex-start;
 		}
 	}
 `;

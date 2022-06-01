@@ -1,18 +1,32 @@
 import { FC } from 'react';
 import {
+	BiArea,
 	BiChart,
+	BiErrorCircle,
+	BiPlanet,
+	BiSpaceBar,
 	BsFlagFill,
+	CgDanger,
+	FaBalanceScale,
 	FaCloud,
 	FaCode,
 	FaCog,
 	FaCopyright,
 	FaEnvelope,
 	FaGithub,
+	FaMoneyBill,
+	FaMoneyCheck,
+	FaSeedling,
 	FaTimes,
 	FaTrashAlt,
 	FaUser,
 	FaUserCircle,
+	FcPlanner,
 	GiMite,
+	GiUpgrade,
+	GrAchievement,
+	GrStorage,
+	ImDrive,
 	SiAboutdotme,
 } from 'react-icons/all';
 import { SettingsContainer as Container } from '../styles/settings';
@@ -63,9 +77,42 @@ const Settings: FC<Props> = (): JSX.Element => {
 						</div>
 					</section>
 				</section>
-				<section className='account-container'>
+				<section className='storage-container'>
 					<h2 className='title'>
 						<BiChart />
+						<span>Account type</span>
+					</h2>
+					<section className='storage-section'>
+						<div className='storage-details'>
+							<h3>
+								<FaSeedling />
+								<span>Plan</span>
+							</h3>
+							<span>Free</span>
+						</div>
+						<div className='storage-details'>
+							<h3>
+								<ImDrive />
+								<span>Storage space</span>
+							</h3>
+							<span>20GB used of 100GB</span>
+						</div>
+						<div className='storage-details'>
+							<h3>
+								<FaMoneyCheck />
+								<span>Balance</span>
+							</h3>
+							<span>$0.00</span>
+						</div>
+						<button>
+							<GiUpgrade />
+							<span>Upgrade account</span>
+						</button>
+					</section>
+				</section>
+				<section className='account-container'>
+					<h2 className='title'>
+						<BiErrorCircle />
 						<span>Danger Zone</span>
 					</h2>
 					<div className='user-actions'>
@@ -80,7 +127,7 @@ const Settings: FC<Props> = (): JSX.Element => {
 							</p>
 							<button>
 								<FaTrashAlt />
-								<span>Delete Account</span>
+								<span>Delete account</span>
 							</button>
 						</div>
 					</div>

@@ -61,7 +61,7 @@ export const SettingsContainer = styled.main`
 			cursor: pointer;
 
 			:hover {
-				background: rgb(${({ theme }) => theme.secondary});
+				box-shadow: 0 0 12px rgb(${({ theme }) => theme.shadows});
 				transition: all 200ms ease-in-out;
 			}
 
@@ -118,7 +118,7 @@ export const SettingsContainer = styled.main`
 			padding: 20px;
 			display: flex;
 			flex-direction: column;
-			gap: 10px;
+			gap: 20px;
 			justify-content: flex-start;
 
 			.section-container {
@@ -152,7 +152,7 @@ export const SettingsContainer = styled.main`
 			padding: 20px;
 			display: flex;
 			flex-direction: column;
-			gap: 10px;
+			gap: 20px;
 			justify-content: flex-start;
 
 			.title > span {
@@ -195,7 +195,7 @@ export const SettingsContainer = styled.main`
 			padding: 20px;
 			display: flex;
 			flex-direction: column;
-			gap: 10px;
+			gap: 20px;
 			justify-content: flex-start;
 
 			.about-section {
@@ -238,8 +238,26 @@ export const SettingsContainer = styled.main`
 			padding: 20px;
 			display: flex;
 			flex-direction: column;
-			gap: 10px;
+			gap: 20px;
 			justify-content: flex-start;
+			max-width: 700px;
+			font-weight: 500;
+
+			.storage-section {
+				display: flex;
+				justify-content: flex-start;
+				flex-direction: column;
+				gap: 10px;
+			}
+
+			.storage-details {
+				display: flex;
+				justify-content: space-between;
+				flex-direction: row;
+				white-space: nowrap;
+				gap: 5px;
+
+			}
 		}
 	}
 `;

@@ -63,7 +63,6 @@ export const AsideContainer = styled.aside`
 				position: relative;
 				border-radius: 3px;
 				:hover {
-				
 					background: rgb(${({ theme }) => theme.hover});
 					transition: all 200ms ease;
 				}

@@ -6,6 +6,7 @@ import { BiWifiOff } from 'react-icons/all';
 import { StatusMessage } from '../components/StatusMessage';
 import { UserPanel } from '../components/modals/UserPanelModal';
 import { CreateFolder } from '../components/modals/CreateFolder';
+import { Aside } from '../components/Aside';
 
 const Home: FC = () => {
 	const [itemsData, setItemsData] = useState([]);
@@ -45,41 +46,44 @@ const Home: FC = () => {
 	const folderCreator = (): void => {};
 
 	return (
-		<Container>
-			{userPanelStatus ? (
-				<UserPanel
-					canceler={userPanelHandler}
-					setUserPanelStatus={setUserPanelStatus}
-				/>
-			) : null}
-			{createFolderStatus ? (
-				<CreateFolder
-					canceler={createFolderHandler}
-					folderCreator={folderCreator}
-				/>
-			) : null}
-
-			<Header
-				userPanelHandler={userPanelHandler}
-				toolbar={
-					<Toolbox
-						setCreateFolderState={setCreateFolderStatus}
-						title={'Cloud Drive'}
-					/>
-				}
-			/>
-			<article className='content'>
-				{itemsData.length === 0 ? (
-					<StatusMessage
-						icon={<BiWifiOff />}
-						title={'No internet connection'}
-						message={
-							'Troubleshoot your connection settings or try again later.'
-						}
+		<>
+			<Aside />
+			<Container>
+				{userPanelStatus ? (
+					<UserPanel
+						canceler={userPanelHandler}
+						setUserPanelStatus={setUserPanelStatus}
 					/>
 				) : null}
-			</article>
-		</Container>
+				{createFolderStatus ? (
+					<CreateFolder
+						canceler={createFolderHandler}
+						folderCreator={folderCreator}
+					/>
+				) : null}
+
+				<Header
+					userPanelHandler={userPanelHandler}
+					toolbar={
+						<Toolbox
+							setCreateFolderState={setCreateFolderStatus}
+							title={'Cloud Drive'}
+						/>
+					}
+				/>
+				<article className='content'>
+					{itemsData.length === 0 ? (
+						<StatusMessage
+							icon={<BiWifiOff />}
+							title={'No internet connection'}
+							message={
+								'Troubleshoot your connection settings or try again later.'
+							}
+						/>
+					) : null}
+				</article>
+			</Container>
+		</>
 	);
 };
 

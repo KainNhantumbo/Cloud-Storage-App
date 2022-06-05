@@ -2,14 +2,13 @@ import type { ReactNode, FC } from 'react';
 import { createContext, useContext } from 'react';
 import { GlobalStyles } from '../styles/Globalstyles';
 import ThemeSeter from './ThemeSeter'
-
-interface props {
+interface Props {
 	children: ReactNode;
 }
 
 const AppContext = createContext({});
 
-const GlobalContext: FC<props> = ({ children }) => {
+const GlobalContext: FC<Props> = ({ children }) => {
 	return (
 		<ThemeSeter >
       <GlobalStyles/>

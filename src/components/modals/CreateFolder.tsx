@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { FaArrowLeft, FaFolderPlus, FaTrashAlt } from 'react-icons/all';
+import { FaArrowLeft, FaFolderPlus } from 'react-icons/all';
 import { CreateFolderContainer as Container } from '../../styles/createFolder';
 
 interface Props {

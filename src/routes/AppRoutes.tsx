@@ -5,6 +5,7 @@ import Settings from '../pages/Settings';
 import RecycleBin from '../pages/RecicleBin';
 import Recents from '../pages/Recents';
 import Login from '../pages/Login';
+import Register from '../pages/Register';
 
 const AppRoutes: FC = () => {
 	return (
@@ -14,6 +15,7 @@ const AppRoutes: FC = () => {
 			<Route path='/recycle-bin' element={<RecycleBin />} />
 			<Route path='/recents' element={<Recents />} />
 			<Route path='/login' element={<Login />} />
+			<Route path='/register' element={<Register />} />
 		</Routes>
 	);
 };

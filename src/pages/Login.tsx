@@ -6,8 +6,6 @@ import {
 	FaCloud,
 	FaEnvelope,
 	FaLock,
-	FaLockOpen,
-	GiPartyPopper,
 	RiAccountCircleFill,
 } from 'react-icons/all';
 interface UserData {
@@ -62,7 +60,13 @@ const Login: FC = (): JSX.Element => {
 							<FaEnvelope />
 							<span>E-mail</span>
 						</label>
-						<input type='email' name='email' required onChange={handleChange} />
+						<input
+							type='email'
+							name='email'
+							placeholder='Type your e-mail here'
+							required
+							onChange={handleChange}
+						/>
 						<label htmlFor='password'>
 							<FaLock />
 							<span>Password</span>
@@ -70,6 +74,7 @@ const Login: FC = (): JSX.Element => {
 						<input
 							type='password'
 							name='password'
+							placeholder='Type your password here'
 							required
 							onChange={handleChange}
 						/>

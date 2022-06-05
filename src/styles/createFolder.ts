@@ -44,6 +44,7 @@ export const CreateFolderContainer = styled.article`
 
 		::placeholder {
 			color: rgba(${({ theme }) => theme.font}, 0.5);
+			font-size: .9rem;
 		}
 		:focus {
 			border: 1px solid rgb(${({ theme }) => theme.primary});

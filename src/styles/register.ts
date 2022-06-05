@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const LoginContainer = styled.main`
+export const RegisterContainer = styled.main`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -39,7 +39,7 @@ export const LoginContainer = styled.main`
 		.slogan {
 			font-weight: 500;
 			line-height: 1.4rem;
-      user-select: none;
+			user-select: none;
 
 			span {
 				color: rgb(${({ theme }) => theme.font});
@@ -86,6 +86,20 @@ export const LoginContainer = styled.main`
 				justify-content: flex-start;
 				flex-direction: column;
 				gap: 15px;
+
+				.form-row {
+          display: flex;
+					flex-flow: row nowrap;
+					justify-content: space-around;
+					gap: 5px;
+          
+					.form-element {
+            width: 100%;
+						display: flex;
+            flex-direction: column;
+            gap: 10px;
+					}
+				}
 
 				label {
 					font-weight: 500;
@@ -138,7 +152,7 @@ export const LoginContainer = styled.main`
 					}
 				}
 
-				input {
+				input, select {
 					border: none;
 					padding: 5px;
 					line-height: 1.2rem;
@@ -184,7 +198,7 @@ export const LoginContainer = styled.main`
 			font-weight: 500;
 			position: relative;
 			line-height: 1.4rem;
-      user-select: none;
+			user-select: none;
 
 			svg {
 				width: 22px;

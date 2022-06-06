@@ -6,14 +6,16 @@ import {
 	FaCloud,
 	FaEnvelope,
 	FaLock,
-	RiAccountCircleFill,
+	FaUserPlus,
 } from 'react-icons/all';
+import { NavigateFunction, useNavigate } from 'react-router-dom';
 interface UserData {
 	email: string;
 	password: string;
 }
 
 const Login: FC = (): JSX.Element => {
+	const navigate: NavigateFunction = useNavigate();
 	const [formData, setFormData] = useState<UserData>({
 		email: '',
 		password: '',
@@ -84,8 +86,8 @@ const Login: FC = (): JSX.Element => {
 								<BiLogIn />
 								<span>Login</span>
 							</button>
-							<button>
-								<RiAccountCircleFill />
+							<button onClick={(e) => navigate('/register')}>
+								<FaUserPlus />
 								<span>Create account</span>
 							</button>
 						</div>

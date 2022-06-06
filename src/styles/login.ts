@@ -39,7 +39,7 @@ export const LoginContainer = styled.main`
 		.slogan {
 			font-weight: 500;
 			line-height: 1.4rem;
-      user-select: none;
+			user-select: none;
 
 			span {
 				color: rgb(${({ theme }) => theme.font});
@@ -149,7 +149,7 @@ export const LoginContainer = styled.main`
 
 					::placeholder {
 						color: rgba(${({ theme }) => theme.font}, 0.5);
-            font-size: .9rem;
+						font-size: 0.9rem;
 					}
 					:focus {
 						border: 1px solid rgb(${({ theme }) => theme.primary});
@@ -184,7 +184,7 @@ export const LoginContainer = styled.main`
 			font-weight: 500;
 			position: relative;
 			line-height: 1.4rem;
-      user-select: none;
+			user-select: none;
 
 			svg {
 				width: 22px;

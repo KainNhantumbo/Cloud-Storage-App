@@ -1,16 +1,16 @@
 import type { FC, ChangeEvent } from 'react';
 import { useState } from 'react';
+import { NavigateFunction, useNavigate } from 'react-router-dom';
 import { RegisterContainer as Container } from '../styles/register';
 import {
-	BiLogIn,
+	BsFlagFill,
+	FaArrowLeft,
 	FaCloud,
 	FaEnvelope,
 	FaLock,
 	FaLockOpen,
-	FaUser,
-	FaUserAlt,
 	FaUserEdit,
-	RiAccountCircleFill,
+	FaUserPlus,
 } from 'react-icons/all';
 
 interface UserData {
@@ -27,11 +27,12 @@ const Register: FC = (): JSX.Element => {
 		name: '',
 		surname: '',
 		email: '',
-		country: '',
+		country: 'Australia',
 		first_password: '',
 		second_password: '',
 	});
 	const [errorMessage, setErrorMessage] = useState('');
+	const navigate: NavigateFunction = useNavigate();
 
 	const handleChange = (e: ChangeEvent | any): void => {
 		setFormData((prevData) => ({
@@ -115,12 +116,16 @@ const Register: FC = (): JSX.Element => {
 							</div>
 							<div className='form-element'>
 								<label htmlFor='country'>
+									<BsFlagFill />
 									<span>Country</span>
 								</label>
-								<select required name='country' onChange={handleChange}>
-									<option selected value='Afghanistan'>
-										Afghanistan
-									</option>
+								<select
+									defaultValue={'Australia'}
+									required
+									name='country'
+									onChange={handleChange}
+								>
+									<option value='Afghanistan'>Afghanistan</option>
 									<option value='Aland Islands'>Aland Islands</option>
 									<option value='Albania'>Albania</option>
 									<option value='Algeria'>Algeria</option>
@@ -183,9 +188,6 @@ const Register: FC = (): JSX.Element => {
 									<option value='Colombia'>Colombia</option>
 									<option value='Comoros'>Comoros</option>
 									<option value='Congo'>Congo</option>
-									<option value='Congo, Democratic Republic of the Congo'>
-										Congo, Democratic Republic of the Congo
-									</option>
 									<option value='Cook Islands'>Cook Islands</option>
 									<option value='Costa Rica'>Costa Rica</option>
 									<option value="Cote D'Ivoire">Cote D'Ivoire</option>
@@ -261,9 +263,7 @@ const Register: FC = (): JSX.Element => {
 									<option value='Kazakhstan'>Kazakhstan</option>
 									<option value='Kenya'>Kenya</option>
 									<option value='Kiribati'>Kiribati</option>
-									<option value="Korea, Democratic People's Republic of">
-										Korea, Democratic People's Republic of
-									</option>
+									<option value='Korea'>Korea</option>
 									<option value='Korea, Republic of'>Korea, Republic of</option>
 									<option value='Kosovo'>Kosovo</option>
 									<option value='Kuwait'>Kuwait</option>
@@ -282,9 +282,7 @@ const Register: FC = (): JSX.Element => {
 									<option value='Lithuania'>Lithuania</option>
 									<option value='Luxembourg'>Luxembourg</option>
 									<option value='Macao'>Macao</option>
-									<option value='Macedonia, the Former Yugoslav Republic of'>
-										Macedonia, the Former Yugoslav Republic of
-									</option>
+									<option value='Macedonia'>Macedonia</option>
 									<option value='Madagascar'>Madagascar</option>
 									<option value='Malawi'>Malawi</option>
 									<option value='Malaysia'>Malaysia</option>
@@ -297,9 +295,7 @@ const Register: FC = (): JSX.Element => {
 									<option value='Mauritius'>Mauritius</option>
 									<option value='Mayotte'>Mayotte</option>
 									<option value='Mexico'>Mexico</option>
-									<option value='Micronesia, Federated States of'>
-										Micronesia, Federated States of
-									</option>
+									<option value='Micronesia'>Micronesia</option>
 									<option value='Moldova, Republic of'>
 										Moldova, Republic of
 									</option>
@@ -346,7 +342,7 @@ const Register: FC = (): JSX.Element => {
 									<option value='Qatar'>Qatar</option>
 									<option value='Reunion'>Reunion</option>
 									<option value='Romania'>Romania</option>
-									<option value='Russian Federation'>Russian Federation</option>
+									<option value='Russian'>Russian</option>
 									<option value='Rwanda'>Rwanda</option>
 									<option value='Saint Barthelemy'>Saint Barthelemy</option>
 									<option value='Saint Helena'>Saint Helena</option>
@@ -381,8 +377,8 @@ const Register: FC = (): JSX.Element => {
 									<option value='Solomon Islands'>Solomon Islands</option>
 									<option value='Somalia'>Somalia</option>
 									<option value='South Africa'>South Africa</option>
-									<option value='South Georgia and the South Sandwich Islands'>
-										South Georgia and the South Sandwich Islands
+									<option value='South Georgia and Sandwich Islands'>
+										South Georgia and Sandwich Islands
 									</option>
 									<option value='South Sudan'>South Sudan</option>
 									<option value='Spain'>Spain</option>
@@ -398,13 +394,9 @@ const Register: FC = (): JSX.Element => {
 									<option value='Syrian Arab Republic'>
 										Syrian Arab Republic
 									</option>
-									<option value='Taiwan, Province of China'>
-										Taiwan, Province of China
-									</option>
+									<option value='Taiwan'>Taiwan</option>
 									<option value='Tajikistan'>Tajikistan</option>
-									<option value='Tanzania, United Republic of'>
-										Tanzania, United Republic of
-									</option>
+									<option value='Tanzania'>Tanzania</option>
 									<option value='Thailand'>Thailand</option>
 									<option value='Timor-Leste'>Timor-Leste</option>
 									<option value='Togo'>Togo</option>
@@ -434,12 +426,12 @@ const Register: FC = (): JSX.Element => {
 									<option value='Uzbekistan'>Uzbekistan</option>
 									<option value='Vanuatu'>Vanuatu</option>
 									<option value='Venezuela'>Venezuela</option>
-									<option value='Viet Nam'>Viet Nam</option>
+									<option value='Vietnam'>Vietnam</option>
 									<option value='Virgin Islands, British'>
 										Virgin Islands, British
 									</option>
-									<option value='Virgin Islands, U.s.'>
-										Virgin Islands, U.s.
+									<option value='Virgin Islands, U.S.'>
+										Virgin Islands, U.S.
 									</option>
 									<option value='Wallis and Futuna'>Wallis and Futuna</option>
 									<option value='Western Sahara'>Western Sahara</option>
@@ -452,7 +444,7 @@ const Register: FC = (): JSX.Element => {
 
 						<section className='form-row'>
 							<div className='form-element'>
-								<label htmlFor='password'>
+								<label htmlFor='first_password'>
 									<FaLockOpen />
 									<span>Password</span>
 								</label>
@@ -465,13 +457,13 @@ const Register: FC = (): JSX.Element => {
 								/>
 							</div>
 							<div className='form-element'>
-								<label htmlFor='password'>
+								<label htmlFor='second_password'>
 									<FaLock />
 									<span>Confirm Password</span>
 								</label>
 								<input
 									type='password'
-									name='password'
+									name='second_password'
 									placeholder='Confirm your password here'
 									required
 									onChange={handleChange}
@@ -482,12 +474,12 @@ const Register: FC = (): JSX.Element => {
 						<span className='errorMessage'>{errorMessage}</span>
 						<div className='actions'>
 							<button type='submit'>
-								<BiLogIn />
+								<FaUserPlus />
 								<span>Register</span>
 							</button>
-							<button>
-								<RiAccountCircleFill />
-								<span>I have account</span>
+							<button onClick={(e) => navigate('/login')}>
+								<FaArrowLeft />
+								<span>Already have account? Login</span>
 							</button>
 						</div>
 					</form>

@@ -2,13 +2,14 @@ import * as React from 'react';
 import { BiSearch, FaCog, FaUserCircle, FiX } from 'react-icons/all';
 import { HeaderContainer as Container } from '../styles/header';
 import { useNavigate } from 'react-router-dom';
+import { useToolboxContext } from '../context/ToolboxContext';
 interface Props {
 	toolbar?: JSX.Element;
-	userPanelHandler: any
 }
 
-export const Header: React.FC<Props> = ({ toolbar, userPanelHandler }): JSX.Element => {
+export const Header: React.FC<Props> = ({ toolbar }): JSX.Element => {
 	const navigate = useNavigate();
+	const { userPanelHandler } = useToolboxContext();
 
 	return (
 		<Container>

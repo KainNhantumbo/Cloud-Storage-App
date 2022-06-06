@@ -1,20 +1,16 @@
 import { FC } from 'react';
-import { FaArrowLeft, FaFolderPlus } from 'react-icons/all';
+import { FaArrowLeft, FaFolder, FaFolderPlus } from 'react-icons/all';
 import { CreateFolderContainer as Container } from '../../styles/createFolder';
+import { useToolboxContext } from '../../context/ToolboxContext';
 
-interface Props {
-	canceler: any;
-	folderCreator: any;
-}
+export const CreateFolder: FC = (): JSX.Element => {
+	const { folderCreator, createFolderHandler: canceler } = useToolboxContext();
 
-export const CreateFolder: FC<Props> = ({
-	canceler,
-	folderCreator,
-}): JSX.Element => {
 	return (
 		<Container className='dialog-modal' onClick={(e) => canceler(e)}>
 			<div className='dialog-prompt'>
 				<div className='prompt-info'>
+					<FaFolder />
 					<span className='prompt-title'>Create new folder</span>
 					<input
 						className='prompt-input'
@@ -29,7 +25,7 @@ export const CreateFolder: FC<Props> = ({
 						<FaArrowLeft />
 						<span>Cancel</span>
 					</button>
-					<button onClick={(e) => folderCreator}>
+					<button onClick={(e) => folderCreator()}>
 						<FaFolderPlus />
 						<span>Create</span>
 					</button>

@@ -44,11 +44,11 @@ export const CreateFolderContainer = styled.article`
 
 		::placeholder {
 			color: rgba(${({ theme }) => theme.font}, 0.5);
-			font-size: .9rem;
+			font-size: 0.9rem;
 		}
 		:focus {
 			border: 1px solid rgb(${({ theme }) => theme.primary});
-      box-shadow: 0 0 10px rgba(${({ theme }) => theme.primary}, .5);
+			box-shadow: 0 0 10px rgba(${({ theme }) => theme.primary}, 0.5);
 		}
 	}
 
@@ -70,18 +70,29 @@ export const CreateFolderContainer = styled.article`
 		flex-direction: column;
 		gap: 20px;
 		padding: 20px;
-		border-radius: 3px;
+		border-radius: 10px;
 		background: rgb(${({ theme }) => theme.backgroundAlt});
 		box-shadow: 0 0 10px rgb(${({ theme }) => theme.shadows});
 		max-width: 600px;
 		margin: 0 10px;
+		border-bottom: 2px solid rgb(${({ theme }) => theme.primary});
 
 		.prompt-info {
 			display: flex;
 			flex-direction: column;
 			justify-content: flex-start;
-			gap: 10px;
+			gap: 20px;
+			position: relative;
+			svg {
+				position: absolute;
+				top: -3px;
+				left: 0;
+				width: 20px;
+				height: 20px;
+				color: rgb(${({ theme }) => theme.primary});
+			}
 			span {
+				padding-left: 25px;
 				font-weight: 500;
 				color: rgb(${({ theme }) => theme.primary});
 			}

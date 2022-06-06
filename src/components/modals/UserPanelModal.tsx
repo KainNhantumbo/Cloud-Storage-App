@@ -9,18 +9,13 @@ import {
 import { userPanelContainer as Container } from '../../styles/userPanel';
 import { useThemeContext } from '../../context/ThemeSeter';
 import { useNavigate } from 'react-router-dom';
+import { useToolboxContext } from '../../context/ToolboxContext';
 
-interface Props {
-	canceler: any;
-	setUserPanelStatus: React.Dispatch<React.SetStateAction<boolean>>;
-}
-
-export const UserPanel: FC<Props> = ({
-	canceler,
-	setUserPanelStatus,
-}): JSX.Element => {
+export const UserPanel: FC = (): JSX.Element => {
 	const { themeSwitcher }: any = useThemeContext();
 	const navigate = useNavigate();
+	const { userPanelHandler: canceler, setUserPanelStatus } =
+		useToolboxContext();
 
 	return (
 		<Container className='user-panel' onClick={(e) => canceler(e)}>

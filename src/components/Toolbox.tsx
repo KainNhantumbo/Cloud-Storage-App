@@ -6,15 +6,13 @@ import {
 	FaBars,
 	FaFolderPlus,
 } from 'react-icons/all';
+import { useToolboxContext } from '../context/ToolboxContext';
 interface Props {
 	title?: string;
-	setCreateFolderState: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export const Toolbox: FC<Props> = ({
-	title,
-	setCreateFolderState,
-}): JSX.Element => {
+export const Toolbox: FC<Props> = ({ title }): JSX.Element => {
+	const { setCreateFolderStatus: setCreateFolderState } = useToolboxContext();
 	return (
 		<Container>
 			<section className='left-container'>

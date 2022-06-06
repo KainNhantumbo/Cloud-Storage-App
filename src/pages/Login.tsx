@@ -22,7 +22,7 @@ const Login: FC = (): JSX.Element => {
 	});
 	const [errorMessage, setErrorMessage] = useState('');
 
-	const handleChange = (e: ChangeEvent | any): void => {
+	const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
 		setFormData((prevData) => ({
 			...prevData,
 			[e.target.name]: e.target.value,
@@ -31,6 +31,7 @@ const Login: FC = (): JSX.Element => {
 	};
 
 	const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
+		e.preventDefault()
 		console.log(e);
 	};
 

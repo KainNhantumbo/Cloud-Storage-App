@@ -61,7 +61,7 @@ export const RegisterContainer = styled.main`
 			width: 100%;
 			max-width: 700px;
 			display: flex;
-			gap: 20px;
+			gap: 30px;
 			justify-content: flex-start;
 			flex-direction: column;
 			box-shadow: 0 0 25px rgba(${({ theme }) => theme.shadows}, 0.6);
@@ -69,7 +69,7 @@ export const RegisterContainer = styled.main`
 			border-radius: 10px;
 			padding: 40px;
 
-			@media screen and (max-width: 340px) {
+			@media screen and (max-width: 400px) {
 				padding: 40px 15px;
 			}
 
@@ -88,16 +88,20 @@ export const RegisterContainer = styled.main`
 				gap: 15px;
 
 				.form-row {
-          display: flex;
+					display: flex;
 					flex-flow: row nowrap;
 					justify-content: space-around;
 					gap: 5px;
-          
+
+					@media screen and (max-width: 620px) {
+						flex-direction: column;
+					}
+
 					.form-element {
-            width: 100%;
+						width: 100%;
 						display: flex;
-            flex-direction: column;
-            gap: 10px;
+						flex-direction: column;
+						gap: 10px;
 					}
 				}
 
@@ -134,6 +138,7 @@ export const RegisterContainer = styled.main`
 
 					:hover {
 						box-shadow: 0 0 12px rgb(${({ theme }) => theme.shadows});
+						background: rgb(${({ theme }) => theme.secondary});
 						transition: all 200ms ease-in-out;
 					}
 
@@ -150,9 +155,14 @@ export const RegisterContainer = styled.main`
 						font-weight: 500;
 						pointer-events: none;
 					}
+
+					@media screen and (max-width: 325px) {
+						width: 100%;
+					}
 				}
 
-				input, select {
+				input,
+				select {
 					border: none;
 					padding: 5px;
 					line-height: 1.2rem;
@@ -163,12 +173,17 @@ export const RegisterContainer = styled.main`
 
 					::placeholder {
 						color: rgba(${({ theme }) => theme.font}, 0.5);
-            font-size: .9rem;
+						font-size: 0.9rem;
 					}
 					:focus {
 						border: 1px solid rgb(${({ theme }) => theme.primary});
 						box-shadow: 0 0 10px rgba(${({ theme }) => theme.primary}, 0.5);
 					}
+				}
+
+				select {
+					height: 31px;
+					padding: 0;
 				}
 
 				.errorMessage {

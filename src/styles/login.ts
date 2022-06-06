@@ -120,6 +120,8 @@ export const LoginContainer = styled.main`
 
 					:hover {
 						box-shadow: 0 0 12px rgb(${({ theme }) => theme.shadows});
+						background: rgb(${({ theme }) => theme.secondary});
+
 						transition: all 200ms ease-in-out;
 					}
 

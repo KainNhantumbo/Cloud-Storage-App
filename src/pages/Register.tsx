@@ -34,7 +34,9 @@ const Register: FC = (): JSX.Element => {
 	const [errorMessage, setErrorMessage] = useState('');
 	const navigate: NavigateFunction = useNavigate();
 
-	const handleChange = (e: ChangeEvent | any): void => {
+	const handleChange = (
+		e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>
+	): void => {
 		setFormData((prevData) => ({
 			...prevData,
 			[e.target.name]: e.target.value,
@@ -43,6 +45,7 @@ const Register: FC = (): JSX.Element => {
 	};
 
 	const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
+		e.preventDefault();
 		console.log(e);
 	};
 

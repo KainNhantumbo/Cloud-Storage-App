@@ -2,7 +2,7 @@ import { IconType } from 'react-icons';
 import { FaUser } from 'react-icons/all';
 
 interface FileTypes {
-	extension: string[];
+	type: string[];
 	icon: IconType;
 }
 
@@ -14,19 +14,12 @@ interface FileObject {
 	createdBy: string;
 	updatedAt: string;
 	file: BlobPart;
-	extension: string;
+	type: string;
 }
 
-interface FolderProps {
-	id: string;
-	name: string;
-	createdAt: Date;
-	createdBy: string;
-	updatedAt: string;
-	content: object[];
-}
+
 
 export const fileTypes: FileTypes = {
-	extension: ['.png'],
+	type: ['image/png',],
 	icon: FaUser,
 };

@@ -64,6 +64,11 @@ export const CreateFolderContainer = styled.article`
 	place-content: center;
 	user-select: none;
 
+	.error-message {
+		color: red;
+		font-weight: 500;
+	}
+
 	.dialog-prompt {
 		display: flex;
 		justify-content: flex-start;

@@ -5,6 +5,20 @@ export const ToolboxContainer = styled.section`
 	justify-content: space-between;
 	align-items: center;
 
+	input {
+		border: none;
+		background: none;
+		position: relative;
+		border-radius: 3px;
+		padding: 5px 7px;
+		max-width: 120px;
+		background: rgb(${({ theme }) => theme.inner});
+		color: rgb(${({ theme }) => theme.font});
+		font-weight: 500;
+		cursor: pointer;
+		appearance: none;
+	}
+
 	.left-container {
 		font-weight: 500;
 	}

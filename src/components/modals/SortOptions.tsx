@@ -10,14 +10,29 @@ import { useToolboxContext } from '../../context/ToolboxContext';
 
 export const SortOptions: FC = (): JSX.Element => {
 	const { handleSort, setIsSortOptionsActive } = useToolboxContext();
+
+	// closes the sort modal
+	const closer = (e: React.MouseEvent<HTMLElement, MouseEvent> | any): void => {
+		let targetClass = e.target.classList;
+		if (targetClass.contains('user-panel')) {
+			setIsSortOptionsActive(false);
+		}
+	};
+
 	return (
-		<Container>
-			<section className='panel-container' >
+		<Container className='user-panel' onClick={closer}>
+			<section className='panel-container'>
 				<div className='panel-actions'>
 					<label htmlFor='name'>
 						<FaSortAlphaDown />
 						<span>Sort by name</span>
-						<input type='radio' name='sort-options' id='name' value={'name'} onChange={e => handleSort(e)} />
+						<input
+							type='radio'
+							name='sort-options'
+							id='name'
+							value={'name'}
+							onChange={(e) => handleSort(e)}
+						/>
 					</label>
 
 					<label htmlFor='name-asc'>
@@ -28,7 +43,7 @@ export const SortOptions: FC = (): JSX.Element => {
 							name='sort-options'
 							id='name-asc'
 							value={'-name'}
-							onChange={e => handleSort(e)}
+							onChange={(e) => handleSort(e)}
 						/>
 					</label>
 
@@ -40,7 +55,7 @@ export const SortOptions: FC = (): JSX.Element => {
 							name='sort-options'
 							id='date'
 							value={'createdAt'}
-							onChange={e => handleSort(e)}
+							onChange={(e) => handleSort(e)}
 						/>
 					</label>
 
@@ -52,7 +67,7 @@ export const SortOptions: FC = (): JSX.Element => {
 							name='sort-options'
 							id='date-asc'
 							value={'-createdAt'}
-							onChange={e => handleSort(e)}
+							onChange={(e) => handleSort(e)}
 						/>
 					</label>
 				</div>

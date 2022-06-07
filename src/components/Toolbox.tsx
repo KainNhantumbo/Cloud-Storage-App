@@ -5,7 +5,6 @@ import {
 	BsFillGridFill,
 	FaBars,
 	FaFolderPlus,
-	FaSort,
 	FcAbout,
 	FcAudioFile,
 	FcDocument,
@@ -23,7 +22,8 @@ interface Props {
 }
 
 export const Toolbox: FC<Props> = ({ title }): JSX.Element => {
-	const { setCreateFolderStatus, handleFiles } = useToolboxContext();
+	const { setCreateFolderStatus, handleFiles, setIsSortOptionsActive } =
+		useToolboxContext();
 
 	return (
 		<Container>
@@ -64,7 +64,10 @@ export const Toolbox: FC<Props> = ({ title }): JSX.Element => {
 					</div>
 				</div>
 				<div className='switch-view'>
-					<button title='Sort'>
+					<button
+						title='Sort'
+						onClick={(e) => setIsSortOptionsActive((prevState) => !prevState)}
+					>
 						<MdSortByAlpha />
 					</button>
 					<button title='Grid view'>

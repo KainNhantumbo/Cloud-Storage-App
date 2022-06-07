@@ -1,22 +1,22 @@
 import { ConfirmModalContainer as Container } from '../../styles/comfirm-modal';
 import { FC } from 'react';
-import { FaArrowLeft, FaTrashAlt } from 'react-icons/fa';
-
+import { FaArrowLeft } from 'react-icons/fa';
 
 interface Props {
 	prompt_title: string;
 	prompt_message: string;
 	button_text: string;
-	closeModal: React.Dispatch<React.SetStateAction<boolean>>
+	closeModal: React.Dispatch<React.SetStateAction<boolean>>;
+	icon: JSX.Element;
 }
 
 export const ConfirmDialog: FC<Props> = ({
 	prompt_title,
 	prompt_message,
 	button_text,
-	closeModal
+	closeModal,
+	icon,
 }): JSX.Element => {
-
 	return (
 		<Container>
 			<section className='dialog-modal' onClick={(e) => {}}>
@@ -30,8 +30,8 @@ export const ConfirmDialog: FC<Props> = ({
 							<FaArrowLeft />
 							<span>No, cancel</span>
 						</button>
-						<button>
-							<FaTrashAlt />
+						<button onClick={(e) => closeModal(false)}>
+							{icon}
 							<span>{button_text}</span>
 						</button>
 					</div>

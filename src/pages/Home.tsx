@@ -2,7 +2,7 @@ import { FC, useState } from 'react';
 import { HomeContainer as Container } from '../styles/home';
 import { Toolbox } from '../components/Toolbox';
 import { Header } from '../components/Header';
-import { BiWifiOff } from 'react-icons/all';
+import { BiTrash, BiWifiOff } from 'react-icons/all';
 import { StatusMessage } from '../components/StatusMessage';
 import { UserPanel } from '../components/modals/UserPanelModal';
 import { CreateFolder } from '../components/modals/CreateFolder';
@@ -30,6 +30,7 @@ const Home: FC = () => {
 						prompt_message='You will be able to recycle this file later.'
 						button_text='Move to trash'
 						closeModal={setIsRecycleDialogActive}
+						icon={<BiTrash />}
 					/>
 				) : null}
 

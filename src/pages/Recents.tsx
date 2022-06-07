@@ -2,7 +2,7 @@ import { FC, useState } from 'react';
 import { RecentsContainer as Container } from '../styles/recents';
 import { Toolbox } from '../components/Toolbox';
 import { Header } from '../components/Header';
-import { FaArchive } from 'react-icons/all';
+import { BiTrash, FaArchive } from 'react-icons/all';
 import { StatusMessage } from '../components/StatusMessage';
 import { UserPanel } from '../components/modals/UserPanelModal';
 import { CreateFolder } from '../components/modals/CreateFolder';
@@ -10,7 +10,6 @@ import { Aside } from '../components/Aside';
 import { useToolboxContext } from '../context/ToolboxContext';
 import { SortOptions } from '../components/modals/SortOptions';
 import { ConfirmDialog } from '../components/modals/ConfirmDialog';
-const [isRecycleDialogActive, setIsRecycleDialogActive] = useState(false);
 
 const Recents: FC = () => {
 	const [itemsData, setItemsData] = useState([]);
@@ -31,6 +30,7 @@ const Recents: FC = () => {
 						prompt_message='You will be able to recycle this file later.'
 						button_text='Move to trash'
 						closeModal={setIsRecycleDialogActive}
+						icon={<BiTrash />}
 					/>
 				) : null}
 

@@ -141,10 +141,8 @@ const ToolboxContext: FC<Props> = ({ children }) => {
 		}, 3000);
 	};
 
-	const [isSortOptionsActive, setIsSortOptionsActive] = useState(true);
-	const handleSort = (e: React.ChangeEvent<HTMLInputElement>): void => {
-		
-	};
+	const [isSortOptionsActive, setIsSortOptionsActive] = useState(false);
+	const handleSort = (e: React.ChangeEvent<HTMLInputElement>): void => {};
 	return (
 		<toolboxContext.Provider
 			value={{

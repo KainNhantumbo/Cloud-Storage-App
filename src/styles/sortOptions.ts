@@ -22,6 +22,8 @@ export const SortContainer = styled.section`
 		background: rgb(${({ theme }) => theme.backgroundAlt});
 		padding: 10px;
 		border-radius: 10px;
+		border-bottom: 2px solid rgb(${({ theme }) => theme.primary});
+
 
 		span {
 			line-height: 1.4rem;

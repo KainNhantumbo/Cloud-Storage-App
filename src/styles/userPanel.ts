@@ -20,6 +20,7 @@ export const userPanelContainer = styled.article`
 		flex-direction: column;
 		box-shadow: 0 0 10px rgb(${({ theme }) => theme.shadows});
 		background: rgb(${({ theme }) => theme.backgroundAlt});
+		border-bottom: 2px solid rgb(${({ theme }) => theme.primary});
 		padding: 10px;
 		border-radius: 10px;
 

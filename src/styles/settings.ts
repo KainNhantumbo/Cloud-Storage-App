@@ -56,9 +56,10 @@ export const SettingsContainer = styled.main`
 			flex-direction: column;
 			gap: 20px;
 			padding: 20px;
-			border-radius: 3px;
+			border-radius: 10px;
 			background: rgb(${({ theme }) => theme.backgroundAlt});
 			box-shadow: 0 0 10px rgb(${({ theme }) => theme.shadows});
+			border-bottom: 2px solid rgb(${({ theme }) => theme.primary});
 			max-width: 600px;
 			margin: 0 10px;
 

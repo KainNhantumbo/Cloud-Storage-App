@@ -29,6 +29,9 @@ interface contextProps {
 	files: File[];
 	setFiles: React.Dispatch<React.SetStateAction<File[]>>;
 	errorMessage: string;
+	isSortOptionsActive: boolean;
+	setIsSortOptionsActive: React.Dispatch<React.SetStateAction<boolean>>;
+	handleSort: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const toolboxContext = createContext<contextProps>({
@@ -43,6 +46,9 @@ const toolboxContext = createContext<contextProps>({
 	files: [],
 	setFiles: () => {},
 	errorMessage: '',
+	isSortOptionsActive: false,
+	setIsSortOptionsActive: () => {},
+	handleSort: () => {},
 });
 
 const ToolboxContext: FC<Props> = ({ children }) => {
@@ -135,6 +141,10 @@ const ToolboxContext: FC<Props> = ({ children }) => {
 		}, 3000);
 	};
 
+	const [isSortOptionsActive, setIsSortOptionsActive] = useState(true);
+	const handleSort = (e: React.ChangeEvent<HTMLInputElement>): void => {
+		
+	};
 	return (
 		<toolboxContext.Provider
 			value={{
@@ -149,6 +159,9 @@ const ToolboxContext: FC<Props> = ({ children }) => {
 				files,
 				setFiles,
 				errorMessage,
+				isSortOptionsActive,
+				setIsSortOptionsActive,
+				handleSort,
 			}}
 		>
 			{children}

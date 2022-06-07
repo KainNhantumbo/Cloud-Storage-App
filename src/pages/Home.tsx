@@ -8,10 +8,11 @@ import { UserPanel } from '../components/modals/UserPanelModal';
 import { CreateFolder } from '../components/modals/CreateFolder';
 import { Aside } from '../components/Aside';
 import { useToolboxContext } from '../context/ToolboxContext';
+import { SortOptions } from '../components/modals/SortOptions';
 
 const Home: FC = () => {
 	const [itemsData, setItemsData] = useState([]);
-	const { createFolderStatus, userPanelStatus } = useToolboxContext();
+	const { createFolderStatus, userPanelStatus, isSortOptionsActive } = useToolboxContext();
 
 	return (
 		<>
@@ -19,6 +20,7 @@ const Home: FC = () => {
 			<Container>
 				{userPanelStatus ? <UserPanel /> : null}
 				{createFolderStatus ? <CreateFolder /> : null}
+				{isSortOptionsActive ? <SortOptions/> : null}
 
 				<Header toolbar={<Toolbox title={'Cloud Drive'} />} />
 				<article className='content'>

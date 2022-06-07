@@ -5,20 +5,6 @@ export const ToolboxContainer = styled.section`
 	justify-content: space-between;
 	align-items: center;
 
-	input {
-		border: none;
-		background: none;
-		position: relative;
-		border-radius: 3px;
-		padding: 5px 7px;
-		max-width: 120px;
-		background: rgb(${({ theme }) => theme.inner});
-		color: rgb(${({ theme }) => theme.font});
-		font-weight: 500;
-		cursor: pointer;
-		appearance: none;
-	}
-
 	.left-container {
 		font-weight: 500;
 	}
@@ -34,8 +20,17 @@ export const ToolboxContainer = styled.section`
 			justify-content: flex-start;
 			flex-flow: row nowrap;
 			gap: 10px;
+			position: relative;
 
-			button {
+			input[type='file'] {
+				opacity: 0;
+				width: 0px;
+				height: 0px;
+				position: absolute;
+			}
+
+			button,
+			label {
 				border: none;
 				background: none;
 				position: relative;
@@ -62,6 +57,11 @@ export const ToolboxContainer = styled.section`
 				span {
 					padding-left: 20px;
 				}
+			}
+
+			label {
+				top: 5.5px;
+				color: rgb(${({ theme }) => theme.primary});
 			}
 		}
 

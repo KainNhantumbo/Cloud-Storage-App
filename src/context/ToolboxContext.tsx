@@ -9,6 +9,7 @@ interface Props {
 interface FolderProps {
 	id: string;
 	name: string;
+	type: string;
 	createdAt: string | number;
 	content: object[];
 }
@@ -83,7 +84,7 @@ const ToolboxContext: FC<Props> = ({ children }) => {
 			return;
 		}
 		if (targetClass.contains('prompt-cancel')) {
-			setCreateFolderStatus((presvState) => !presvState);
+			setCreateFolderStatus((prevState) => !prevState);
 			return;
 		}
 	};
@@ -119,6 +120,7 @@ const ToolboxContext: FC<Props> = ({ children }) => {
 		const new_folder: FolderProps = {
 			id: uuidV4(),
 			name: folder_name,
+			type: 'folder',
 			createdAt: new Date().toUTCString(),
 			content: [],
 		};

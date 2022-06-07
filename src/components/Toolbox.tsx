@@ -5,6 +5,7 @@ import {
 	BsFillGridFill,
 	FaBars,
 	FaFolderPlus,
+	FaSort,
 	FcAbout,
 	FcAudioFile,
 	FcDocument,
@@ -14,6 +15,7 @@ import {
 	FcInfo,
 	FcOpenedFolder,
 	FcVideoFile,
+	MdSortByAlpha,
 } from 'react-icons/all';
 import { useToolboxContext } from '../context/ToolboxContext';
 interface Props {
@@ -23,11 +25,10 @@ interface Props {
 export const Toolbox: FC<Props> = ({ title }): JSX.Element => {
 	const { setCreateFolderStatus, handleFiles } = useToolboxContext();
 
-
 	return (
 		<Container>
 			<FcFile />
-			<FcDocument/>
+			<FcDocument />
 			<FcInfo />
 			<FcAbout />
 			<FcAudioFile />
@@ -49,8 +50,10 @@ export const Toolbox: FC<Props> = ({ title }): JSX.Element => {
 					</button>
 
 					<div title='Upload files'>
-						<BiCloudUpload />
-						<label>Upload files</label>
+						<label htmlFor='file'>
+							<BiCloudUpload />
+							<span>Upload</span>
+						</label>
 						<input
 							type='file'
 							name='file'
@@ -61,6 +64,9 @@ export const Toolbox: FC<Props> = ({ title }): JSX.Element => {
 					</div>
 				</div>
 				<div className='switch-view'>
+					<button title='Sort'>
+						<MdSortByAlpha />
+					</button>
 					<button title='Grid view'>
 						<BsFillGridFill />
 					</button>

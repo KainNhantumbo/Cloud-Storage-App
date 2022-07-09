@@ -1,15 +1,9 @@
 import { FC } from 'react';
 import { ToolboxContainer as Container } from '../styles/toolbox';
 import {
-	BiCloudUpload,
-	BiTrash,
-	BiTrashAlt,
 	BsFillGridFill,
 	FaBars,
-	FaFolderPlus,
-	FaTrash,
 	FaTrashAlt,
-	FaTrashRestore,
 	FaTrashRestoreAlt,
 } from 'react-icons/all';
 

@@ -1,6 +1,6 @@
-import { ThemeObj } from "./themeTypes";
+import { ThemeDefinition } from "./themeTypes";
 
-export const primary: ThemeObj = {
+export const primary: ThemeDefinition = {
 	primary: '0, 174, 239',
 	secondary: '128, 102, 149',
 	hover: '232, 240, 254',
@@ -12,7 +12,7 @@ export const primary: ThemeObj = {
 	backgroundAlt: '255, 255, 255',
 };
 
-export const dark: ThemeObj = {
+export const dark: ThemeDefinition = {
 	primary: '108, 161, 246',
 	secondary: '64, 52, 82',
 	hover: '88, 65, 83',

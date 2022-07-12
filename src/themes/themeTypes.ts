@@ -1,4 +1,4 @@
-export interface ThemeObj {
+export type ThemeDefinition ={
 	primary: string;
 	secondary: string;
 	font: string;
